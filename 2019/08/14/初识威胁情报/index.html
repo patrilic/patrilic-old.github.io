@@ -1,0 +1,175 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>初识威胁情报 | Patrilic's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">初识威胁情报</h1><a id="logo" href="/.">Patrilic's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/2019/04/01/Hello/"><i class="fa fa-user"> About</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">初识威胁情报</h1><div class="post-meta">Aug 14, 2019<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2019/08/14/初识威胁情报/" href="/2019/08/14/初识威胁情报/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">Contents</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00-前言"><span class="toc-number">1.</span> <span class="toc-text">0x00 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01-相关概念"><span class="toc-number">2.</span> <span class="toc-text">0x01 相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义"><span class="toc-number">2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-pyramid-of-pain"><span class="toc-number">2.2.</span> <span class="toc-text">the-pyramid-of-pain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分类"><span class="toc-number">2.3.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-number">2.4.</span> <span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#意义"><span class="toc-number">2.5.</span> <span class="toc-text">意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-分析模型"><span class="toc-number">3.</span> <span class="toc-text">0x02 分析模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kill-Chain模型"><span class="toc-number">3.1.</span> <span class="toc-text">Kill-Chain模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Diamond-Model模型"><span class="toc-number">3.2.</span> <span class="toc-text">Diamond Model模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kill-Chain-Diamond-Model"><span class="toc-number">3.3.</span> <span class="toc-text">Kill-Chain + Diamond Model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ATT-amp-CK-Matrix-for-Enterprise"><span class="toc-number">3.4.</span> <span class="toc-text">ATT&amp;CK Matrix for Enterprise</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-总结"><span class="toc-number">4.</span> <span class="toc-text">0x03 总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04-链接"><span class="toc-number">5.</span> <span class="toc-text">0x04 链接</span></a></li></ol></div></div><div class="post-content"><p>@Author: Patrilic<br>@Time: 2019-08-14 23:32:22</p>
+<h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p>自从开始学习<code>红蓝对抗</code>相关之后，一直想学习关于威胁情报的东西，平时也会在<a href="https://x.threatbook.cn/" target="_blank" rel="noopener">微步社区</a>之类的地方去看一些关于威胁的分析报告。今天晚上终于空了下来，准备好好的沉淀一下，最近发生很多事情，并且接了个项目，一直在忙，这几天就好好的沉静下来去系统认识一下这个东西</p>
+<h2 id="0x01-相关概念"><a href="#0x01-相关概念" class="headerlink" title="0x01 相关概念"></a>0x01 相关概念</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>翻了很多文章，大多数都是认为威胁情报的定义为Gartner在2014年发表的《安全威胁情报服务市场指南》</p>
+<blockquote>
+<p>基于一定知识的证据，已经存在或正在形成的潜在威胁，比如，上下文、机制、指标、意义以及可实施的建议，利用这些，可以帮助当事人形成应对这些危险的决策。</p>
+</blockquote>
+<h3 id="the-pyramid-of-pain"><a href="#the-pyramid-of-pain" class="headerlink" title="the-pyramid-of-pain"></a>the-pyramid-of-pain</h3><p><img src="/初识威胁情报.resources/7EC24897-0F01-4B0B-A3D3-63D3E1AF2863.png" alt="8be5978252a523fd61cee3ef211d70d2"><br><strong>这个金字塔非常明显的展示了关于情报和利用的困难度对应的关系，同时也和情报的价值相关</strong></p>
+<p>从下往上看：<br><strong>Hash Value</strong>：Hash值是一个文件的唯一凭证，类似于我们在<code>VirusTotal</code>中提交样本那串hash，但是如果文件中有一点东西被改变了，都会导致这个文件的Hash值变得不同，所以反而，一个样本的hash也是最不值得跟踪的，当然价值也最低。</p>
+<p><strong>Ip Addresses</strong>：IP地址，如果攻击者常用的<code>Pentest Server</code>被记录下来的话，也有一定的价值，不过目前来说，绝大部分人使用C2域名来隐藏自己的攻击，同时使用CDN/代理之类的手段的来不停的变换自己的IP，来绕过跟踪。</p>
+<p><strong>Domain Names</strong>：域名的话是现在大多数隐蔽攻击的方式，注册一个类似域名，配合使用鱼叉攻击的工具可以达到邮件钓鱼之类的目的。域名的话需要注册，备案，然后与服务器进行绑定，所以准备的东西还是比较多的。但是这种方式隐蔽攻击的效果也较好，特别是如果存在<code>Subdomain Takeover</code>这样的漏洞，效果非常的棒。但是在大型APT行动中，攻击者也会准备大量域名，所以这个的价值就显得不是特别的高了。</p>
+<p><a href="https://www.secpulse.com/archives/94973.html" target="_blank" rel="noopener">深入解析子域名接管（Subdomain Takeover）漏洞</a></p>
+<p><strong>Network/Host Artifacts</strong>：顾名思义，这一层是网络与主机特征，这里特征并不单单包括攻击者的各种主机信息，例如访问的特定UA头等，还包括了攻击者所获得的账号密码，例如从某一个VPN账号连接至内网，然后又从某一台出口机器走出的流量等。</p>
+<p><strong>Tools</strong>：特定组织/单独的黑客通常会使用相同或相似的方法进行攻击，获得了使用的工具特征，就能进行针对性的免杀等，让攻击者增加成本<br><strong>TTPs</strong>：<code>Tactics、Techniques &amp; Procedures</code>，TTPs在攻击方也是最重要的，指所使用的攻击策略、手法等，了解了一个组织的TTPs，就能明白攻击者所利用的具体漏洞，然后去防御。</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>这里推一波<code>@e1knot</code>师傅在Defcon Group上的演讲PPT</p>
+<p>👉 <a href="https://www.slideshare.net/JeremyLi10/discover-advanced-threats-with-threat-intelligence-jeremy-li" target="_blank" rel="noopener">https://www.slideshare.net/JeremyLi10/discover-advanced-threats-with-threat-intelligence-jeremy-li</a></p>
+<p>传统分类来看，威胁情报分为：</p>
+<ol>
+<li>战术情报</li>
+<li>战略情报</li>
+<li>运营情报</li>
+</ol>
+<p><strong>战术级情报</strong>：战术情报的作用主要是发现威胁事件以及对报警确认或优先级排序。常见的失陷检测情报（CnC 情报，即攻击者控制被害主机所使用的远程命令与控制服务器情报）、IP情报就属于这个范畴，它们都是可机读的情报，可以直接被设备使用，自动化的完成上述的安全工作。</p>
+<p><strong>运营级情报</strong>：运营级情报是给安全分析师或者说安全事件响应人员使用的，目的是对已知的重要安全事件做分析（报警确认、攻击影响范围、攻击链以及攻击目的、技战术方法等）或者利用已知的攻击者技战术手法主动的查找攻击相关线索。</p>
+<p><strong>战略级情报</strong>：战略层面的威胁情报是给组织的安全管理者使用的，比如CSO。它能够帮助决策者把握当前的安全态势，在安全决策上更加有理有据。包括了什么样的组织会进行攻击，攻击可能造成的危害有哪些，攻击者的战术能力和掌控的资源情况等，当然也会包括具体的攻击实例。</p>
+<p>—————————-手动分割线——————————–</p>
+<p>然后<code>@e1knot</code>师傅在知乎专栏中提到了另一种分类方式，在我看来这种也是更加容易理解的（赞）</p>
+<p>👉 <a href="https://zhuanlan.zhihu.com/p/30105006" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/30105006</a></p>
+<p>大概就是分为如下几种类型：</p>
+<ol>
+<li>IP/Domain 信誉类情报</li>
+<li>网络通信流量数据</li>
+<li>事件分类（Incident Pulse）数据</li>
+<li>蜜罐数据</li>
+<li>被动流量解析（Passive DNS）数据</li>
+</ol>
+<p>（相信各位渗透测试工作者也常常在实战中遇到蜜罐这类东西，稍不注意就会把自己常用的姿势和手段“送”给企业）</p>
+<p><strong>IP/Domain 信誉类情报</strong>：经常逛微步社区或者用它来找过dns解析之类的师傅肯定也会发现，IP或者域名会被打上各种标签，例如：<br><img src="/初识威胁情报.resources/D934469E-34B5-428B-9F83-FB61673159EA.png" alt="34f6416ad8558f4cf07372f9484726b6"></p>
+<p>以下平台可以供我们方便的查询到这个IP/Domaini是不是已经被列为恶意IP/Domain，或者他在某一段时间是否是被恶意攻击者攻陷等。</p>
+<ul>
+<li>微步在线 - <a href="https://x.threatbook.cn" target="_blank" rel="noopener">https://x.threatbook.cn</a></li>
+<li>奇安信威胁情报中心 - <a href="https://ti.qianxin.com/" target="_blank" rel="noopener">https://ti.qianxin.com/</a></li>
+<li>RiskIQ Community - <a href="https://community.riskiq.com" target="_blank" rel="noopener">https://community.riskiq.com</a></li>
+</ul>
+<p>但是由于不同的威胁平台的检测可能不同，导致结果可能有偏差等。所以相对其他的，反而成为了相对最没有价值的情报</p>
+<p><strong>网络通信流量数据</strong>：这里指从大网上采集的数据，也就是我们俗称的外网数据。主要是看目标服务器的流量波动，比如如果在某一个端口上的流量在一段时间剧增，可能存在被入侵的风险</p>
+<p><strong>事件分类</strong>：这里提一下两个概念：</p>
+<ol>
+<li>CERT：Computer emergency response team  维基百科：<a href="https://en.wikipedia.org/wiki/Computer_emergency_response_team" target="_blank" rel="noopener">wiki</a></li>
+<li>CIRT：Critical Incident Response Team 维基百科：<a href="https://en.wikipedia.org/wiki/Critical_Incident_Response_Team" target="_blank" rel="noopener">wiki</a></li>
+</ol>
+<p>具体可以查看后面的维基百科链接进行了解<br>然后是事件分类大概就是，将威胁情报的基础数据进行打包分类，然后封装成一个个的事件。<br>这种情报的好处在哪里呢，一个是可以基本全面的进行威胁分析，然后提前预警。然后同时也可以更快的发现事件。<br>然后厂商经过整理后，可以通过订阅的方式进行预警，同时收取订阅费用。<br>例如：</p>
+<ul>
+<li>微步在线</li>
+<li>Alienvault OTX <a href="https://otx.alienvault.com" target="_blank" rel="noopener">https://otx.alienvault.com</a></li>
+<li>IBM X-Force Exchange <a href="https://exchange.xforce.ibmcloud.com/" target="_blank" rel="noopener">https://exchange.xforce.ibmcloud.com/</a></li>
+</ul>
+<p><strong>蜜罐数据</strong>：这个东西没什么好说的，就是企业部署在内网或者外网（很少）的一些看似薄弱点，引诱攻击者进行攻击，暴露自己的行为特征甚至是TTP</p>
+<p>然后最近冰总社区里发了个挺好玩的开源蜜罐：<br>👉 <a href="https://bithack.io/forum/484" target="_blank" rel="noopener">https://bithack.io/forum/484</a></p>
+<p><strong>被动流量解析</strong>：其实就是被动DNS（Passive DNS），也是一种比较老的技术了，但是依然很常用，特别是溯源内网恶意流量的时候..下面这几篇文章讲的很详细了～就不多讲了</p>
+<ul>
+<li><a href="https://securityintelligence.com/how-to-use-passive-dns-to-inform-your-incident-response/" target="_blank" rel="noopener">How to Use Passive DNS to Inform Your Incident Response</a></li>
+<li><p><a href="https://www.deteque.com/news/passive-dns/" target="_blank" rel="noopener">What is Passive DNS? A beginner’s guide</a></p>
+</li>
+<li><p><a href="https://www.riskiq.com/platform/architecture/internet-data-sets/passive-dns/" target="_blank" rel="noopener">Passive DNS</a></p>
+</li>
+</ul>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><blockquote>
+<p>《Market Guide for Security Threat Intelligence Service》 – Gartner . 2014</p>
+</blockquote>
+<p>在业界接受较广，而他认为情报是过程的产物，而非独立数据点的合集。Gartner刻画了威胁情报的生命周期：<br><img src="/初识威胁情报.resources/A574A6F6-0408-4F70-90D0-5E43D1CA3147.png" alt="b551bc79146cfd117fd9ccf5b4c04408.png"></p>
+<ul>
+<li>定向：定义目标并完善</li>
+<li>收集：从多种开放或封闭的源收集数据；电子的、人工的</li>
+<li>处理：如有需要，翻译；进行可靠性评估；核对多个源</li>
+<li>分析：判断此信息的意义；评估信息的重要性；推荐相应措施</li>
+<li>传递：将情报传递给客户</li>
+<li>反馈：依照需求调整</li>
+</ul>
+<h3 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h3><p>同样也是<code>@e1knot</code>师傅文章中提到的，<strong>威胁情报在安全运营体系中的定位是——辅助发现潜在的或正在发起的恶意行为或操作，重点在于辅助两个字，威胁情报严格意义上来说只能有限的感知潜在的威胁，换句话说：如果有人现在瞄准的目标全部都是能源类客户，那么威胁情报就可以提醒没有被攻击的客户可能会遭受到该攻击者的攻击，这个叫做有限的感知潜在的威胁。</strong></p>
+<h2 id="0x02-分析模型"><a href="#0x02-分析模型" class="headerlink" title="0x02 分析模型"></a>0x02 分析模型</h2><p><a href="https://www.slideshare.net/JeremyLi10/application-of-threat-intelligence-in-security-operation?utm_source=slideview&amp;utm_medium=ssemail&amp;utm_campaign=first_clip" target="_blank" rel="noopener">https://www.slideshare.net/JeremyLi10/application-of-threat-intelligence-in-security-operation?utm_source=slideview&amp;utm_medium=ssemail&amp;utm_campaign=first_clip</a></p>
+<p>既然威胁情报是个辅助手段，所以，我们通过使用威胁情报进行分析，才是最主要的。<br>这里目前用的比较多的就是两大模型：</p>
+<ol>
+<li>Kill Chain</li>
+<li>Diamond Model</li>
+</ol>
+<p>但是我觉得现在应该再加一个ATT&amp;CK矩阵，比如以最出名的<code>MITRE ATT&amp;CK</code>举例，里面基本上集合了绝大部分的入侵模型。<br>👉 <a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK</a></p>
+<h3 id="Kill-Chain模型"><a href="#Kill-Chain模型" class="headerlink" title="Kill-Chain模型"></a>Kill-Chain模型</h3><p><img src="/初识威胁情报.resources/0133F529-3989-4E8B-847C-F5A3F33C1FBE.jpg" alt="fcc8b4c5429f36b191520f4c40e4dcb1.jpeg"><br>这个模型其实和<code>PTES</code>比较相似，做渗透比较多的同学应该都比较了解了</p>
+<ul>
+<li>侦查阶段：扫描目标IT资产和信息收集，比如说Google Hacking这些侦查类型的攻击</li>
+<li>武器化阶段：将前一阶段发现和扫描到漏洞的信息整合到一起并制作针对性的武器（当然国内的嘛，你懂得）</li>
+<li>部署阶段：将这些武器或者是远控RAT部署到对应的Compromised Servers上</li>
+<li>攻击阶段：使用这些Compromised Servers和之前做好的武器化工具对目标发起攻击</li>
+<li>后门种植阶段：安装远程控制的服务和进程</li>
+<li>远控阶段：让目标和C&amp;C通信</li>
+<li>后渗透阶段：收割、继续横向渗透入侵</li>
+</ul>
+<p>还是给一个链接：<a href="http://www.pentest-standard.org/index.php/Main_Page" target="_blank" rel="noopener">pentest-standard</a><br>PTES基本流程：</p>
+<ul>
+<li>Pre-engagement Interactions</li>
+<li>Intelligence Gathering</li>
+<li>Threat Modeling</li>
+<li>Vulnerability Analysis</li>
+<li>Exploitation</li>
+<li>Post Exploitation</li>
+<li>Reporting</li>
+</ul>
+<p><strong><code>Kill-Chain模型</code>基本上就是描述了攻击者的进攻路线，但是并不能明确的说明造成的影响和目的。</strong></p>
+<h3 id="Diamond-Model模型"><a href="#Diamond-Model模型" class="headerlink" title="Diamond Model模型"></a>Diamond Model模型</h3><p>钻石模型是一个针对单个事件分析的模型，核心就是用来描述攻击者的技战术和目的，具体的钻石模型如下图所示：<br><img src="/初识威胁情报.resources/11AEE56D-E38D-48D7-B02D-D09B38AEE471.jpg" alt="4b601b6bc348f226a906ce13b3d535d0.jpeg"></p>
+<p>钻石模型由三部分组成：置信度、元数据、社会-政治影响和技战术组合</p>
+<p><strong>社会政治影响</strong>：处于钻石模型上下两个顶点，上顶点表示攻击者，下顶点表示受害者也就是目标。攻击者和受害者之间的某种利益冲突或者是社会地位对立则会产生攻击的意图和发起攻击的原因，纵切面表示的就是社会政治影响。说大白话就是根据这俩人去发现攻击的意图。</p>
+<p><strong>技战术组合</strong>：技战术组合位于整个钻石模型的横切面，横切面的两个顶点分别为基础设施和技术能力，这里的基础设施和技术能力其实都是相对于攻击者而言的。</p>
+<p><strong>元数据</strong>：这个其实就是左边列出来的，攻击时间、攻击阶段、攻击结果、攻击方向、攻击手段、攻击资源利用。</p>
+<p><strong>置信度</strong>：也就是以上你分析出结果的可信程度。</p>
+<p>钻石模型想要表达的其实就是针对单个安全事件，我们可以得到攻击者为什么想要攻击目标，打算用什么手段去攻击目标。</p>
+<h3 id="Kill-Chain-Diamond-Model"><a href="#Kill-Chain-Diamond-Model" class="headerlink" title="Kill-Chain + Diamond Model"></a>Kill-Chain + Diamond Model</h3><p>直接举个例子<code>@e1knot</code>师傅给的例子：</p>
+<p>复杂的攻击往往都是有一系列的攻击事件组成的，不同的攻击事件指向的目标和达到的目的可以表示出攻击的进程，那么OK，我们如果把事件按照Kill-Chain进行分类同时使用泳道图进行表示，同时把不同的攻击路线分为不同的攻击线程，那么我们就可以得到一个这样的泳道图。<br><img src="/初识威胁情报.resources/84FF0AAE-65B8-43D4-8BB2-F5E6A1E8A614.jpg" alt="b9baf610a02307c8c0c3d905bc9b497c.jpeg"><br>其实这张图描述的是这么一个事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1.攻击者先对目标进行了Google Hacking操作，获得了他们域名解析记录等一些基础的It信息</span><br><span class="line">2.攻击者找到了一个目标新注册的域名，然后用搜索引擎搜索他们的网络管理员的电子邮件信息</span><br><span class="line">3.攻击者使用鱼叉邮件方式对目标的网络管理员发送一封带有木马的邮件</span><br><span class="line">4.目标的网管（我们叫他网管一号）打开了这封邮件的附件然后不幸中枪</span><br><span class="line">5.网管一号的主机因为中了病毒，所以攻击者利用网管一号这台主机发送了一个HTTP Post请求到域控节点，然后域控节点返回了一个HTTP Response</span><br><span class="line">6.我们通过对鱼叉邮件中附件进行逆向分析发现里面有两个IP地址，第二个IP地址作为备份，防止第一个失效</span><br><span class="line">7.通过C&amp;C请求到网管一号的主机，我们的恶意程序打开了一个TCP代理服务</span><br><span class="line">8.通过网管一号主机上的代理服务，攻击者继续去Google上搜索其他的目标</span><br><span class="line">9.攻击者检查网管一号邮件的通信录列表去寻找是否拥有目标二号的通讯方式，结果发现了目标二号的首席科学家的联系方式</span><br><span class="line">10.攻击者使用攻陷的网管一号的邮箱对目标二号的首席科学家的邮箱发起鱼叉邮件攻击，工具使用和之前一样的</span><br><span class="line">11.此时又来了一个攻击者，我们称他为攻击者二号，攻击者一号扫描了目标三号的web服务器</span><br><span class="line">12.使用同样的漏洞利用工具攻击发现目标三号主机上的相同的漏洞</span><br><span class="line">13.被攻陷的目标三号主机返回一个shell会话给攻击者三号</span><br><span class="line">14.目标三号的所有数据被攻击者三号窃取</span><br></pre></td></tr></table></figure></p>
+<p>这样的话使用Kill-Chain和钻石模型分析可以同时get到攻击者的点和想要攻击的目标，同时还知道了他的攻击路径，也就是说这时候我们对攻击者了如指掌了。</p>
+<h3 id="ATT-amp-CK-Matrix-for-Enterprise"><a href="#ATT-amp-CK-Matrix-for-Enterprise" class="headerlink" title="ATT&amp;CK Matrix for Enterprise"></a>ATT&amp;CK Matrix for Enterprise</h3><p>这个是我自己加上去的，同时也是平时去了解红队TTP的好地方<br><img src="/初识威胁情报.resources/1223BE32-9B48-4504-8164-6F1625D130B3.png" alt="2425d00398a387cd6532219f91303fa9"></p>
+<h2 id="0x03-总结"><a href="#0x03-总结" class="headerlink" title="0x03 总结"></a>0x03 总结</h2><p>学习上面的知识也有一点自己的想法，威胁情报作为态势感知的一种，不仅能够让企业针对性的进行防御，同时也能够让运营看到自己的一些盲点，能够跟好的进行企业安全建设相关的方面（说到这里也不得不赞叹谷歌的0信任，真的太牛逼了)，威胁情报能做的事情还是很多的，我自己整理之后觉得有以下几个方向：</p>
+<pre><code>1. 企业安全建设相关
+2. 学习运营盲点
+3. 溯源攻击
+4. 全球共享情报，增加入侵成本
+5. 学习新的攻击手段，收集0day（蜜罐）
+6. ……
+</code></pre><p>最后，e1knot师傅tql</p>
+<h2 id="0x04-链接"><a href="#0x04-链接" class="headerlink" title="0x04 链接"></a>0x04 链接</h2><p><a href="https://mp.weixin.qq.com/s?__biz=MzI5MzY2MzM0Mw==&amp;mid=2247484237&amp;idx=1&amp;sn=a02b4576bac88de4089a259d3da3ccb9&amp;chksm=ec6fe44ddb186d5b57eb61af95a7edbf24d4012fa640a9382e2e99f236f0215f2b3953658297&amp;scene=38#wechat_redirect" target="_blank" rel="noopener">使用威胁情报调查攻击者</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/30160133" target="_blank" rel="noopener">使用威胁情报追踪攻击者——Part 2 高级威胁事件分析与防御矩阵</a></p>
+<p><a href="https://www.xmanblog.net/threat-intelligence/" target="_blank" rel="noopener">浅析威胁情报</a><br><a href="https://xz.aliyun.com/t/1814" target="_blank" rel="noopener">浅谈高级威胁情报对于安全建设的意义与思考（上）—攻击者情报那些不得不说的事儿</a><br><a href="https://xz.aliyun.com/t/1928" target="_blank" rel="noopener">浅谈高级威胁情报对于安全建设的意义与思考（中）—基础设施情报那些不得不说的事儿</a><br><a href="https://xz.aliyun.com/t/1935" target="_blank" rel="noopener">浅谈高级威胁情报对于安全建设的意义与思考（下）—事件情报那些不得不说的事儿</a></p>
+</div><div class="tags"><a href="/tags/威胁情报/">威胁情报</a></div><div class="post-nav"><a class="next" href="/2019/07/28/CISCN 2019 Final Web11/">CISCN 2019 Final Web11 赛后复盘</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://patrilic.top/2019/08/14/初识威胁情报/';
+    this.page.identifier = '2019/08/14/初识威胁情报/';
+    this.page.title = '初识威胁情报';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//Patrilic.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//Patrilic.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://Patrilic.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://patrilic.top"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/Backdoor/" style="font-size: 15px;">Backdoor</a> <a href="/tags/代码审计/" style="font-size: 15px;">代码审计</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/内网渗透/" style="font-size: 15px;">内网渗透</a> <a href="/tags/SQL注入/" style="font-size: 15px;">SQL注入</a> <a href="/tags/文件上传/" style="font-size: 15px;">文件上传</a> <a href="/tags/威胁情报/" style="font-size: 15px;">威胁情报</a> <a href="/tags/命令执行/" style="font-size: 15px;">命令执行</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/08/14/初识威胁情报/">初识威胁情报</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/28/CISCN 2019 Final Web11/">CISCN 2019 Final Web11 赛后复盘</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/18/Phishing Attack - 文件落地/">Phishing Attack - 文件落地</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/10/CISCN2019-西南赛区部分Web题解/">CISCN2019-西南赛区部分Web题解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/05/QWB2019 Web -随便注（题解）/">QWB2019 Web -随便注（题解）</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/08/Command Execute By mshta/">Command Execute By mshta</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/05/Windows 抓取Hash/">常用 Windows 抓取Hash</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/23/第十二届全国大学生信息安全竞赛初赛Write up/">第十二届全国大学生信息安全竞赛初赛部分Web Write up</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/18/ADS 隐藏后门/">ADS隐藏后门</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/14/MySQL Injection/">MySQL Injection（持续更新）</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> Recent Comments</i></div><script type="text/javascript" src="//Patrilic.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Links</i></div><ul></ul><a href="http://hpdoger.cn" title="Hpdoger" target="_blank">Hpdoger</a><ul></ul><a href="http://0day.design/" title="Passer6y" target="_blank">Passer6y</a><ul></ul><a href="http://adm1n.design" title="Hu3sky" target="_blank">Hu3sky</a><ul></ul><a href="https://0xa1paca.github.io/" title="0xa1paca" target="_blank">0xa1paca</a><ul></ul><a href="http://noel.xin/" title="Noel" target="_blank">Noel</a><ul></ul><a href="https://www.0akarma.com/" title="0aKarmA" target="_blank">0aKarmA</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">Patrilic's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body></html>
