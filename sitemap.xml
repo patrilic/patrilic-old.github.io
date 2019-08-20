@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://patrilic.top/2019/04/01/Hello/</loc>
+    
+    <lastmod>2019-08-20T06:48:59.969Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://patrilic.top/2019/08/15/%E4%BB%8ELearn%20Git%20Branching%E5%AD%A6%E4%B9%A0Git/</loc>
     
     <lastmod>2019-08-17T01:22:08.683Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://patrilic.top/2019/08/17/CVE-2019-1162/</loc>
     
     <lastmod>2019-08-17T01:10:54.125Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://patrilic.top/2019/04/01/Hello/</loc>
-    
-    <lastmod>2019-08-16T05:26:52.693Z</lastmod>
     
   </url>
   
