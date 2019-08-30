@@ -46,7 +46,7 @@
     <link href="http://patrilic.top/2019/08/29/Windows10%20BypassUAC%20with%20WSReset.exe/"/>
     <id>http://patrilic.top/2019/08/29/Windows10 BypassUAC with WSReset.exe/</id>
     <published>2019-08-29T15:51:00.000Z</published>
-    <updated>2019-08-29T16:44:37.528Z</updated>
+    <updated>2019-08-30T00:49:55.667Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>@Author: Patrilic<br>Time: 2019-08-29 23:51:00<br><img src="/wallpaper/63740442.png" alt></p></blockquote><h2 id="0x00-前言"><a href="#0x00-前言" class="headerlink" title="0x00 前言"></a>0x00 前言</h2><p><a href="https://heynowyouseeme.blogspot.com/2019/08/windows-10-lpe-uac-bypass-in-windows.html" target="_blank" rel="noopener">https://heynowyouseeme.blogspot.com/2019/08/windows-10-lpe-uac-bypass-in-windows.html</a></p><p>利用<code>WSReset.exe</code>进行bypassUAC。</p><p>为什么只限于Win10呢，因为这个位于<code>C:\WINDWOS\System32</code> 目录下的程序，是微软商店的一个工具<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/E969032A-4448-40D0-9389-395E1D9502AA.png" alt="6f262c0c97c3dfb682f04fd809cf60e3"></p><h2 id="0x01-Bypass"><a href="#0x01-Bypass" class="headerlink" title="0x01 Bypass"></a>0x01 Bypass</h2><p>这里原作者自己编写了脚本和工具：<br><a href="https://github.com/sailay1996/UAC_bypass_windows_store" target="_blank" rel="noopener">https://github.com/sailay1996/UAC_bypass_windows_store</a></p><p>首先使用<code>UAC.bat</code><br><img src="/Windows10 BypassUAC with WSReset.exe.resources/CB964BB5-BB3A-4D53-A67C-6E6454849741.png" alt="ec35f36d2e88012ed02af35cbc09e1f0"></p><p>创建一个带空格字符的目录，然后把WSReset扔进去</p><p>接着运行<code>uac_bypass.exe</code><br><img src="/Windows10 BypassUAC with WSReset.exe.resources/8FF6C343-6736-4498-A988-5766929E0EFD.png" alt="c4add2018e585c2ca68544c6acabb04e"></p><p>调用DLL，弹出对话框<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/A6D6CAA5-A74F-4965-B791-F1E7FCDDC7B7.png" alt="605ad7a9df01dc55e5392b562a029677"><br>主要就是因为这个👉<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/32B27C2A-82C9-4934-9CCD-3051DBEAC8A7.png" alt="589206bf8c6b67a17a09253985b8e353"></p><p>然后会弹出一个管理员的CMD<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/B375540E-97FA-4751-8A24-9A0385A5341F.png" alt="4c6538e20548f14902cfd64df18f0cb6"></p><p>但是有一个问题是，虚拟机一直保持高速下载<br><img src="/Windows10 BypassUAC with WSReset.exe.resources/92007680-2629-45ED-AE96-E6C8863511D2.png" alt="f1748df2675213d7fa216762acb9be4c"></p><p>感觉程序里有些东西..后面无聊再分析吧。</p><h2 id="0x02-总结"><a href="#0x02-总结" class="headerlink" title="0x02 总结"></a>0x02 总结</h2><p>bypassUAC方法多种多样，看这个只是因为好玩，用微软没啥用的应用商店的组件，其实本质上还是DLL劫持2333</p>]]></content>
     
@@ -62,7 +62,7 @@
     
     </summary>
     
-      <category term="Red-Team Tricks" scheme="http://patrilic.top/categories/Red-Team-Tricks/"/>
+      <category term="BypassUac" scheme="http://patrilic.top/categories/BypassUac/"/>
     
     
       <category term="内网渗透" scheme="http://patrilic.top/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/"/>
