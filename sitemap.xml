@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://patrilic.top/2020/01/09/TetCTF%20-%20Secure%20System%20Write-up/</loc>
+    
+    <lastmod>2020-03-18T09:46:39.603Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://patrilic.top/2020/03/18/Java%20Reflection/</loc>
+    
+    <lastmod>2020-03-18T09:43:39.737Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://patrilic.top/2020/03/18/Java%20%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</loc>
     
     <lastmod>2020-03-18T03:28:17.371Z</lastmod>
@@ -54,13 +68,6 @@
     <loc>http://patrilic.top/2020/01/08/Ghost%20Potato%20%E5%A4%8D%E7%8E%B0/</loc>
     
     <lastmod>2020-01-15T07:25:23.054Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://patrilic.top/2020/01/09/TetCTF%20-%20Secure%20System%20Write-up/</loc>
-    
-    <lastmod>2020-01-09T06:53:25.063Z</lastmod>
     
   </url>
   
